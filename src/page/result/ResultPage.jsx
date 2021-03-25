@@ -9,7 +9,7 @@ const ResultPage = (props) => {
 
     return (
         <div>
-            Home Page!
+            Result Page!
         </div>
     );
 }

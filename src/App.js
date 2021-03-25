@@ -1,11 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
-import CameraPage from './page/camera'
+
+import React from 'react'
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { routeInfoMap } from "./routing";
+
+function generateRoutes(routingMap) {
+  let routeList = [];
+
+  routingMap.forEach((info, route) => {
+    routeList.push(
+      <Route
+        path={route}
+        exact={info.isExact}
+        component={info.pageComp}
+        key={route}
+      />
+    );
+  });
+  return routeList;
+}
 
 function App() {
   return (
     <div className="App">
-      <CameraPage/>
+      <BrowserRouter>
+        <ul>
+          <li>
+            <Link to="/home">home</Link>
+          </li>
+          <li>
+            <Link to="/camera">camera</Link>
+          </li>
+          <li>
+            <Link to="/result">result</Link>
+          </li>
+        </ul>
+        <Switch>
+          {generateRoutes(routeInfoMap)}
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
