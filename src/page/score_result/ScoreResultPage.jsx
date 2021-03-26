@@ -9,7 +9,7 @@ const ScoreResultPage = (props) => {
 
     return (
         <div>
-            Result Page!
+            Score Result Page!
         </div>
     );
 }

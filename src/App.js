@@ -32,7 +32,10 @@ function App() {
             <Link to="/camera">camera</Link>
           </li>
           <li>
-            <Link to="/result">result</Link>
+            <Link to="/score_result">scoreRes</Link>
+          </li>
+          <li>
+            <Link to="/camera_result">cameraRes</Link>
           </li>
         </ul>
         <Switch>
