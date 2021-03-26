@@ -1,6 +1,7 @@
 import CameraPage from './page/camera'
 import HomePage from './page/home'
-import ResultPage from './page/result'
+import CameraResultPage from './page/camera_result'
+import ScoreResultPage from './page/score_result'
 
 
 export const routeInfo = {
@@ -18,13 +19,20 @@ export const routeInfo = {
         pageComp: CameraPage,
         frameVisible: true,
     },
-    result: {
-        title: "결과 화면",
+    cameraResult: {
+        title: "카메라 결과 화면",
         isExact: true,
-        route: "/result",
-        pageComp: ResultPage,
+        route: "/camera_result",
+        pageComp: CameraResultPage,
         frameVisible: true,
     },
+    scoreResult: {
+      title: "점수 결과 화면",
+      isExact: true,
+      route: "/score_result",
+      pageComp: ScoreResultPage,
+      frameVisible: true,
+  },
 };
 
 //Auto generated map

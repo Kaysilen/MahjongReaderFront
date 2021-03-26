@@ -4,7 +4,7 @@ const useStyles = makeStyles({
 });
 
 
-const ResultPage = (props) => {
+const ScoreResultPage = (props) => {
 
 
     return (
@@ -15,4 +15,4 @@ const ResultPage = (props) => {
 }
 
 
-export default ResultPage;
+export default ScoreResultPage;
