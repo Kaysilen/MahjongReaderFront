@@ -13,11 +13,26 @@ class CameraResultStore {
     cardList = [];
 
     pushCard = (cardIdx)=>{
+        let check = 0;
 
+        for(let i in this.cardList)
+        {
+            if(this.cardList[i] === cardIdx)
+                check++;
+        }
+
+        if(check > 3 || this.cardList.length > 13)
+            return false;
+        else
+        {
+            this.cardList.push(cardIdx);
+            this.cardList.sort((a,b)=>a-b); // 오름차순 Sort
+            return true;
+        }
     }
 
     deleteCard = (listIdx)=>{
-
+        this.cardList.splice(listIdx,1);
     }
 
 }
