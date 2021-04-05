@@ -1,10 +1,21 @@
 import './App.css';
 
 import React from 'react'
+import { makeStyles } from '@material-ui/core/styles';
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import { routeInfoMap } from "./routing";
 
-function generateRoutes(routingMap) {
+
+const useStyles = makeStyles({
+  allPageSize:{
+      width : '350px',
+      height : '630px',
+      padding : '5px'
+  }
+});
+
+
+const generateRoutes = (routingMap, style) => {
   let routeList = [];
 
   routingMap.forEach((info, route) => {
@@ -12,7 +23,7 @@ function generateRoutes(routingMap) {
       <Route
         path={route}
         exact={info.isExact}
-        component={info.pageComp}
+        render={() => <info.pageComp className ={style.allPageSize}/>} 
         key={route}
       />
     );
@@ -21,6 +32,8 @@ function generateRoutes(routingMap) {
 }
 
 function App() {
+  const style = useStyles();
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -39,7 +52,7 @@ function App() {
           </li>
         </ul>
         <Switch>
-          {generateRoutes(routeInfoMap)}
+          {generateRoutes(routeInfoMap, style)}
         </Switch>
       </BrowserRouter>
     </div>
